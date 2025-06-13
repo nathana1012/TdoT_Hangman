@@ -74,13 +74,13 @@ def getRandomWord(wordList):
     return wort
 
 #Mache eine Methode mit dem Namen "displayBoard" und als Parameter gibst du "HANGMANPICS, missedLetters, correctLetters, secretWord" mit
-def displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord):
+
     print(HANGMANPICS[len(missedLetters)])
     print()
 
     print('Falsche Buchstaben:', end=' ')
     #Gib die "missedLetters" aus die der Benutzer falsch geraten hat
-    print(missedLetters)
+    
 
     blanks = '_' * len(secretWord)
 
@@ -97,7 +97,7 @@ def displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord):
 def getGuess(alreadyGuessed):
 
     #Mache hier eine variable mit dem Namen "alphabet" die alle Buchstaben aus dem Alphabet hat
-    alphabet = 'abcdefghijklmnopqrstuvwxyzöäü'
+    
     while True:
         try:
             derBuchstabe = input("Ein neuer Buchstaben den du noch nicht getippt hast: ")
@@ -133,21 +133,21 @@ def playAgain():
             print(e) 
 
     #Gib "again" zurück
-    return again 
+     
 
 
 
 #Gib einen schoenen Titel aus, damit der Benutzer weiss, worum es geht
-print('H A N G M A N')
+
 
 
 
 missedLetters = ''
 correctLetters = ''
 #Mache eine Variable, die den Namen "secretWord" hat und die Funktion "getRandomWord" aufruft und als Parameter die Liste "words" hat
-secretWord = getRandomWord(words)
+
 #Mache eine Variable Namens "gameIsDone" die den Boolean Wert "False" hat
-gameIsDone = False
+
 
 while True:
     displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord)
@@ -180,13 +180,10 @@ while True:
         #Auch sollte ein neues Wort in secretWord ueber die Methode getRandomWord(words) gewaehlt werden
         if playAgain():
             print("Nochmals Spielen ...")
-            missedLetters = ''
-            correctLetters = ''
-            secretWord = getRandomWord(words)
-            gameIsDone = False
+
         else:
             #BRICH die Schleife ab da der Benutzer nicht mehr spielen will
-            break
+           
 
 
         
